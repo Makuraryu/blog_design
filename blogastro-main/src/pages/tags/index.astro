@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const allPosts = await getCollection('blog');
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const pageTitle = "标签";
+---
+<Layout pageTitle={pageTitle}>
+  <div id="guider">
+    
+    <p>这里有一些供你选择的主题：</p>
+    <ul class="tags">
+      {tags.map((tag) => (
+        <li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>
+      ))}
+    </ul>
+  </div>
+</Layout>

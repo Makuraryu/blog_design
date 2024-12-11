@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Base.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+const title = "主页";
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf() 
+).slice(0,4);
+const allPosts = await getCollection('blog');
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())].slice(0,3);
+---
+<Layout pageTitle= {title}>
+<div id="guider">
+	<p>欢迎来到竹醉阁。</p>
+	<p>这里有我写的一些<a href="/archive">文章</a>：</p>
+	<ul>
+		{posts.map(post => (
+			<li>
+				<a href={`/blog/${post.slug}/`}>
+					<span class="title">{post.data.title}</span>
+					<span class="date">
+						<FormattedDate date={post.data.pubDate} />
+					</span>
+				</a>
+			
+			</li>
+			
+		))}
+	</ul>
+	<p>你也可以选找你喜欢的<a href="/tags">主题</a>来阅读：</p>
+	<ul>
+		{tags.map((tag) => (
+		  <li><a href={`/tags/${tag}`}>{tag}</a></li>
+		))}
+	</ul>
+	<p>或者你对我感兴趣吗？来看看<a href="about">关于我</a>的内容吧！</p>
+	<p>愿我们还能再次相遇！</p>
+	<blockquote>我想并不是很遥远的事。还会相见的。因为你我之间有着某种共通之处。你不这样感觉？</blockquote>
+</div>
+</Layout>

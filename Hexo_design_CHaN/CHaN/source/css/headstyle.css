@@ -1,0 +1,137 @@
+body {
+    background-color: #f8f4ed;
+    display: flex;
+    flex-direction: column;
+}
+
+#list {
+    font-family: mincho;
+    background-color: #fffffb;
+    width: 800px;
+    height: min-content;
+    left: 20%;
+    margin: 100px auto;
+    box-shadow: 10px 5px 5px rgba(215, 196, 187, 0.4);
+    color: #c1b2a3;
+    overflow: hidden;
+}
+
+
+/*头部*/
+
+a {
+    text-decoration: none;
+    color: #c1b2a3;
+}
+
+#head {
+    position: relative;
+    height: 240px;
+    width: 100%;
+    z-index: 999;
+}
+
+#head::after {
+    position: absolute;
+    background-color: #c1b2a3;
+    width: 80%;
+    right: 10%;
+    height: 1px;
+    bottom: 0px;
+    content: "";
+}
+
+#name {
+    position: absolute;
+    font-size: 70px;
+    width: 5vw;
+    line-height: 70px;
+    left: 60px;
+    top: 50px;
+    font-weight: 900;
+    text-shadow: 10px 10px 5px rgba(215, 196, 187, 0.4);
+}
+
+#links {
+    list-style-type: none;
+    position: absolute;
+    right: 40px;
+    height: 15px;
+    width: 100%;
+    top: 40px;
+    text-shadow: 10px 5px 5px rgba(215, 196, 187, 0.4);
+}
+
+#links::after {
+    position: absolute;
+    background-color: #c1b2a3;
+    width: 40%;
+    height: 10%;
+    right: -10px;
+    bottom: -50px;
+    content: "";
+}
+
+#linka {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    float: right;
+    margin: 0.5vw;
+    font-size: 20px;
+    color: #c1b2a3;
+}
+
+#linkli a:hover {
+    animation: a 0.2s forwards;
+}
+
+#sign {
+    position: absolute;
+    font-size: 20px;
+    right: 50px;
+    bottom: 60px;
+    text-shadow: 10px 5px 5px rgba(215, 196, 187, 0.4);
+}
+
+@font-face {
+    font-family: mincho;
+    src: url(../diy-font/mincho.ttf);
+}
+
+@keyframes a {
+    100% {
+        transform: translateY(-2px);
+        color: #b89485;
+        text-shadow: 10px 10px 5px rgba(215, 196, 187, 0.6);
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    #list {
+        width: 95%;
+        margin: 10 auto;
+    }
+    #head {
+        height: 220px;
+    }
+    #name {
+        left: 30px;
+    }
+    #links {
+        top: 50px;
+        right: 20px;
+    }
+    #links::after {
+        right: 0;
+        bottom: -30px;
+    }
+    #linka {
+        font-size: 15px;
+    }
+    #sign {
+        bottom: 80px;
+        right: 20px;
+        font-size: 15px;
+    }
+}

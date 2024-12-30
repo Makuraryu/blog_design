@@ -1,0 +1,53 @@
+#linkers {
+    position: relative;
+    width: 680px;
+    margin: 60px auto;
+}
+
+#linker {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    background-color: #fbecde;
+    box-shadow: 10px 5px 20px rgba(215, 196, 187, 0.4);
+    margin: 20px;
+    float: left;
+}
+
+#linker:hover {
+    animation: linker 0.3s forwards;
+}
+
+#linkeravater {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    border-radius: 30px;
+}
+
+#linkername {
+    position: absolute;
+    right: 30px;
+    font-size: 25px;
+}
+
+#linkerdescription {
+    position: absolute;
+    font-size: 20px;
+    right: 10px;
+    bottom: -5px;
+}
+
+@keyframes linker {
+    100% {
+        transform: translateY(-5px) translateZ(40px);
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    #linkers {
+        width: 90%;
+    }
+}

@@ -1,0 +1,18 @@
+<%- css('css/links') %>
+    <div id="linkers">
+
+
+        <% for (var a in theme.linker){ %>
+            <a href="<%- url_for(theme.linker[a].links) %>">
+                <div id="linker">
+                    <img src="<%- url_for(theme.linker[a].avater) %>" id="linkeravater">
+                    <p id="linkername">
+                        <%= a %>
+                    </p>
+                    <p id="linkerdescription">
+                        <%= theme.linker[a].description %>
+                    </p>
+                </div>
+            </a>
+            <% } %>
+    </div>

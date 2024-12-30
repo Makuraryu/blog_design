@@ -1,0 +1,128 @@
+ #posts {
+     position: relative;
+     width: 100%;
+     height: auto;
+ }
+ 
+ #bunsho {
+     position: relative;
+     width: 90%;
+     height: 150px;
+     margin: 60px auto;
+     box-shadow: 10px 5px 20px rgba(215, 196, 187, 0.4);
+ }
+ 
+ #bunsho:hover {
+     animation: a 0.3s forwards;
+ }
+ 
+ #bunsho:hover #title {
+     color: #b89485;
+ }
+ 
+ #title {
+     top: -30px;
+     position: absolute;
+     width: 95%;
+     margin: 50px;
+     left: 20px;
+     font-size: 30px;
+     font-weight: bolder;
+ }
+ 
+ #title:hover::before {
+     content: " 「";
+     position: absolute;
+     opacity: 0;
+     animation: titleleft 0.3s forwards;
+     top: 0vw;
+     font-size: 30px;
+     color: #a0674b
+ }
+ 
+ #title:hover::after {
+     content: " 」";
+     position: absolute;
+     opacity: 0;
+     animation: titleright 0.3s forwards;
+     bottom: -3px;
+     font-size: 34px;
+     color: #a0674b
+ }
+ 
+ #quoter {
+     position: absolute;
+     top: 80px;
+     font-size: 100px;
+     left: -10px;
+     text-shadow: 10px 10px 5px rgba(215, 196, 187, 0.2);
+ }
+ 
+ #quote {
+     position: absolute;
+     top: 90px;
+     left: 100px;
+     width: 60%;
+     font-size: 20px;
+     opacity: 0.8;
+     font-style: italic;
+ }
+ 
+ #time {
+     position: absolute;
+     right: 10px;
+     bottom: 10px;
+     font-size: 18px;
+     color: #b89485;
+ }
+ 
+ @keyframes artical {
+     100% {
+         transform: translateY(-2px);
+         color: #b89485;
+         text-shadow: 10px 10px 5px rgba(215, 196, 187, 0.6);
+         box-shadow: 10px 10px 5px rgba(215, 196, 187, 0.6);
+     }
+ }
+ 
+ @keyframes titleleft {
+     0% {
+         transform: -23px;
+     }
+     100% {
+         opacity: 1;
+         transform: translateX(-33px);
+     }
+ }
+ 
+ @keyframes titleright {
+     0% {
+         transform: translateX(-13px);
+     }
+     100% {
+         opacity: 1;
+         transform: translateX(-3px);
+     }
+ }
+ 
+ @media only screen and (max-width: 820px) {
+     #title {
+         margin: 0;
+         top: 45px;
+         font-size: 30px;
+         width: 100%;
+         text-align: center;
+         left: 0;
+     }
+     #quoter {
+         display: none;
+     }
+     #time {
+         display: none;
+     }
+     #quote {
+         width: 100%;
+         text-align: center;
+         left: 0;
+     }
+ }

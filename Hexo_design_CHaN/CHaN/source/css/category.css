@@ -1,0 +1,22 @@
+.categories {
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
+
+#caname {
+    font-size: 30px;
+}
+
+#catitle {
+    font-size: 20px;
+    width: 100%;
+}
+
+#catitle::before {
+    content: " 「";
+}
+
+#catitle::after {
+    content: "」";
+}

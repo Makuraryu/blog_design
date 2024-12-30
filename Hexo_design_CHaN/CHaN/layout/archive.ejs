@@ -1,0 +1,30 @@
+<%- css('css/archive') %>
+    <div class="archive">
+        <% var tempYear %>
+            <% var posts = site.posts.sort('date') %>
+                <% posts.each(function(post, i){ %>
+                    <% var currentYear = parseInt(date(post.date, 'YYYY')); %>
+                        <% if (tempYear != currentYear){ %>
+                            <% tempYear = currentYear %>
+
+                                <h3 id="years">
+                                    <%- currentYear%>
+                                </h3>
+                                <% } %>
+                                    <p id="arposts">
+                                        <time datetime="<%- date(post.date, 'YYYY-MM')%>">
+                                        <span><%- date(post.date, 'MMMM DD')%></span>
+                                    </time>
+                                        <a id="artitle" href="<%- url_for(post.path) %>">
+                                            <%= post.title%>
+                                        </a>
+                                        <span id="arcategory">
+                                        <%= Object.values(post.categories.data[0])[0] %>
+                                    </span>
+                                    </p>
+
+                                    <% if (!posts.eq(i + 1) || currentYear != parseInt(date(posts.eq(i + 1).date, 'YYYY'))){ %>
+
+                                        <% } %>
+                                            <% }) %>
+    </div>

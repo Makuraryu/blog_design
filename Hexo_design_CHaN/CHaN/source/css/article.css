@@ -1,0 +1,45 @@
+#article {
+    position: relative;
+    width: 80%;
+    margin: 10%;
+}
+
+#postitle {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+}
+
+#articleinfo {
+    text-align: center;
+}
+
+#articleinfo>span {
+    margin: 10px;
+    font-size: 17px;
+}
+
+#articletags {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+#tags {
+    position: relative;
+}
+
+#postitle::before {
+    content: "「";
+}
+
+#postitle::after {
+    content: "」";
+}
+
+#content {
+    position: relative;
+    width: 640px;
+    margin: 100px auto;
+}

@@ -1,0 +1,29 @@
+#tags {
+    width: 80%;
+    margin: 30px auto;
+}
+
+#tag {
+    position: relative;
+    float: left;
+    background-color: #f9f4dc;
+    box-shadow: 10px 5px 20px rgba(215, 196, 187, 0.4);
+    height: auto;
+    border-radius: 10px;
+    font-weight: lighter;
+    width: auto;
+    margin: 20px;
+    font-size: 20px;
+    line-height: 40px;
+    padding: 0 30px;
+}
+
+#hole {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    left: 8px;
+    border-radius: 5px;
+    background-color: #fffffb;
+}

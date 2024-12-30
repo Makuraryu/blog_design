@@ -1,0 +1,15 @@
+<%- css('css/headstyle') %>
+    <div id="head">
+        <a id="name" href="<%- url_for(theme.main) %>">枕流</a>
+
+        <ul id="links">
+            <% for (var i in theme.menu){ %>
+                <li id="linkli">
+                    <a id="linka" href="<%- url_for(theme.menu[i]) %>">
+                        <%= i %>
+                    </a>
+                </li>
+                <% } %>
+        </ul>
+        <span id="sign">「回归纯粹，勇于狼狈」</span>
+    </div>

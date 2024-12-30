@@ -1,0 +1,38 @@
+<%- css('css/article') %>
+    <%- css('css/markdown') %>
+        <%- css('css/povtnav') %>
+            <div id="article">
+                <h1 id="postitle">
+                    <%= page.title %>
+                </h1>
+                <div id="articleinfo"> <span id="words">📋 ：<%= page.words %> </span><span>📆 ：<%= date(page.date, "YYYY-MM-DD") %></span></div>
+                <div id="articletags">
+                    <span id="tags"> 🏷 :
+            <% page.tags.each(function(tag){%>
+                <a class="tag" href="<%- url_for(tag.path) %>" ><%= tag.name %></a>
+        <% }) %>
+                    </span>🗃 ：
+                    <% page.categories.each(function(category){%>
+                        <a class="tag" href="<%- url_for(category.path) %>">
+                            <%= category.name %>
+                        </a>
+                        <% }) %>
+                </div>
+                <div id="innerart">
+                    <%- page.content %>
+                </div>
+                <div id="postnav">
+                    <% if (page.prev){ %>
+                        <a id="postnavprev" href="<%- url_for(page.prev.path) %>">
+                    上一篇：<%= page.prev.title %>
+                </a>
+                        <% } %>
+
+                            <% if (page.next){ %>
+                                <a id="postnavnext" href="<%- url_for(page.next.path) %>">
+                            下一篇：<%= page.next.title %>
+                        </a>
+                                <% } %>
+
+                </div>
+            </div>

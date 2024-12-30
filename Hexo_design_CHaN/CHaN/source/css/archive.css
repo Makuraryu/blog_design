@@ -1,0 +1,44 @@
+.archive {
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
+
+#years {
+    position: relative;
+    font-size: 30px;
+}
+
+#arposts {
+    font-size: 20px;
+    margin: 60 auto;
+}
+
+#arcategory {
+    position: absolute;
+    right: 10px;
+}
+
+#artitle:hover {
+    animation: artitle 0.2s forwards;
+}
+
+#artitle::before {
+    content: " 「";
+}
+
+#artitle::after {
+    content: "」";
+}
+
+@keyframes artitle {
+    100% {
+        letter-spacing: 1px;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    #arcategory {
+        display: none;
+    }
+}

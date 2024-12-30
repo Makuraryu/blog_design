@@ -1,0 +1,32 @@
+<%- css('css/about') %>
+    <div id="whole">
+        <div id="abwords">
+            <p id="abwelcome"> 很高兴与你相见！ 👋</p>
+            <p id="abname">我是 濑户枕流.</p>
+            <blockquote>其中“濑户”沿袭先前的“濑户空”一名，“枕流”则取自“漱石枕流”一词，恰是优秀文人夏目漱石的另一部分。此外，“枕流”一词还暗指安于流水，意味着“善利于万物而不争”的思想——这种安静而稳定的态度，着实宝贵。以“枕流”替换“空”，大抵意味着我开始进入了脚踏实地的阶段。此外，这一名字的英文，我并未直接沿用其日语中的罗马音“ChinRyu”或是中文拼音，而是写成 “Makuraryu”，其中Makura是枕头的发音。采用名词的发音而非动词的发音，是为了表明一种安静的状态。</blockquote>
+            <p id="ablove">我热爱科技的、也热爱有禅意的。</p>
+            <p id="ablove"> 喜欢文学、数学、哲学、计算机科学、设计学、社会形态学。</p>
+        </div>
+        <div id="abcontact">
+            <p id="ablinkswords">你可以来这些地方找我！</p>
+            <div id="ablinks">
+                <a id="ablink" href="mailto:pumshang2004@163.com">邮件</a>
+                <% for (var i in theme.contact){ %>
+                    <a id="ablink" href="<%- url_for(theme.contact[i]) %>">
+                        <%= i %>
+                    </a>
+                    <% } %>
+            </div>
+
+            <p>这是我的一些项目：</p>
+            <div id="projects">
+
+
+                <% for (var i in theme.projects){ %>
+                    <a id="project" href="<%- url_for(theme.projects[i]) %>">
+                        <%= i %>
+                    </a>
+                    <% } %>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,55 @@
+{% include header.html %}
+<div class="container">
+    <div id="cover">
+        <div id="posttitle">
+            <span class="posttitle">
+                {{ page.title }}
+            </span>
+        </div>
+        {% include navigation.html %}
+    </div>
+
+
+    <div class="main">
+        <div id="article">
+            {{ content }}
+        </div>
+        {% if page.categories %}
+        <p class="post_footer">
+            Published on {{ page.date | date: "%b %d, %Y" }} in categories 
+            {% for cat in page.categories %}
+            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+            {% endfor %}
+        <p>
+        {% endif %}
+        <div class="prev_next">
+            {% if page.previous.url %}
+            <p class="previous_post">
+                <span>上一篇</span>
+                <a href="{{page.previous.url}}">{{page.previous.title}}</a>
+            </p>
+            {% endif %}
+            {% if page.next.url %}
+            <p class="next_post">
+                <span>下一篇</span>
+                <a href="{{page.next.url}}">{{page.next.title}}</a>
+            </p>
+            {% endif %}
+        </div>
+   {% include comments.html %}
+    </div>
+</div>
+{% include footer.html %}
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>

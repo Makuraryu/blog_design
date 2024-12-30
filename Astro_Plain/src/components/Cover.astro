@@ -1,0 +1,13 @@
+---
+const { pageTitle } = Astro.props;
+import { ViewTransitions,fade } from 'astro:transitions';
+
+---
+<div id="cover" transition:name="cover">
+  <p>  { pageTitle } </p>
+
+
+</div>
+<style>
+</style>
+

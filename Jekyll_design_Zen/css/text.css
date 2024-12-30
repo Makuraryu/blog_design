@@ -1,0 +1,113 @@
+
+a{
+    text-decoration: none;
+    color: #1c1c1c;
+    font-family: FandolSong;
+}
+
+span{
+    font-family: FandolSong;
+    color: #1c1c1c;
+}
+
+
+#article a{
+    position: relative;
+}
+
+#article a::before{
+    position: absolute;
+    content: "";
+    background-color: rgba(181,202,160,.5);
+    left: 0;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    transition:.5s;
+}
+
+#article a:hover::before{
+    height: 100%;
+}
+
+#article blockquote{
+    position: relative;
+    left:-1vw;
+    color:#36563c;
+}
+
+#article blockquote::before {
+    position:absolute;
+    content:"";
+    background-color:#36563c;
+    height:100%;
+    width:3px;
+    left:-25px;
+}
+
+#article img{
+    position:relative;
+    max-width:40vw;
+    min-width:20vw;
+}
+
+#article strong{
+    font-family:FandolSong-Bold;
+    color:#36563c;
+}
+
+#article h1{
+    transform:translateY(10px);
+    position:ralative;
+}
+
+#article h2{
+    transform:translateY(10px);
+    position:ralative;
+}
+
+#article h3{
+    transform:translateY(10px);
+    position:ralative;
+}
+
+#article h4{
+    transform:translateY(10px);
+    position:ralative;
+}
+
+#article h5{
+    transform:translateY(10px);
+    position:ralative;
+}
+
+#article h6{
+    transform:translateY(10px);
+    position:ralative;
+}
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: FandolSong-Bold;
+    src: url(./FandolSong-Bold.otf);
+}
+
+@font-face {
+    font-family: FandolSong;
+    src: url(./FandolSong-Regular.otf);
+}
+
+
+
+
+
+
+    
+    

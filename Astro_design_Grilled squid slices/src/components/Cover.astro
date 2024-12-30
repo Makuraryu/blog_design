@@ -1,0 +1,89 @@
+---
+const { pageTitle } = Astro.props;
+import { ViewTransitions,fade } from 'astro:transitions';
+
+---
+<div id="cover" transition:name="cover">
+  <ViewTransitions />
+  <p>  { pageTitle } </p>
+
+
+</div>
+<style>
+  p{
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 20px;
+    font-weight: 900;
+    position: relative;
+    height: 70vh;
+    top: 15vh;
+    line-height: 100px;
+    word-break: break-all;
+    animation: text 1.6s forwards;
+  }
+  #cover{
+    animation: anim 1.6s forwards;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    top: 0;
+    display: flex;            
+    display: -webkit-flex;            
+    justify-content: center;    
+    backdrop-filter: blur(5px);   
+
+  }
+  @keyframes text{
+    0%{
+      text-shadow: 0em 0em 0.05em #0F4C3A
+
+    }
+    20%{
+      text-shadow: 0.1em 0.1em 1em #0F4C3A
+
+
+    }
+    60%{
+      text-shadow: 0.1em 0.1em 0.2em #0F4C3A
+
+    }
+    99%{
+      text-shadow: 0.1em 0.1em 0.2em #0F4C3A
+
+    }
+    100%{
+      text-shadow: 0.1em 0.1em 0.2em #0F4C3A
+
+    }
+    
+  }
+  @keyframes anim{
+    0%{
+      transform: translateY(0);
+      background-color: rgba(252, 250, 242, 1);
+    }
+    20%{
+      transform: translateY(0);
+      background-color: rgba(252, 250, 242, 1);
+
+    }
+    60%{
+      transform: translateY(-5vh);
+      background-color: rgba(252, 250, 242, .8);
+    }
+    99%{
+      transform: translateY(-110vh);
+      background-color: rgba(252, 250, 242, .8);
+    }
+    100%{
+      transform: translateY(-110vh);
+      background-color: rgba(252, 250, 242, 1);
+    }
+    
+  }
+
+</style>
+

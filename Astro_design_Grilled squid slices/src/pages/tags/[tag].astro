@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Base.astro';
+import FormattedDate  from '../../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+
+
+    const allPosts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf() 
+);
+    const allPostsWithTags = allPosts.map(post => ({
+        ...post,
+        data: {
+        ...post.data,
+        tags: post.data.tags || [], // 如果 tags 字段不存在，则设置为空数组
+        },
+    }));
+
+    const uniqueTags = [...new Set(allPostsWithTags.map((post) => post.data.tags).flat())];
+
+    return uniqueTags.map((tag) => {
+        const filteredPosts = allPostsWithTags.filter((post) => post.data.tags.includes(tag));
+        return {
+        params: { tag },
+        props: { posts: filteredPosts },
+        };
+    });
+}
+
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+<Layout pageTitle={tag}>
+    <div id="guider">
+        <p>包含「{tag}」标签的文章</p>
+        <ul>
+          {posts.map((post) => <li>
+              <a href={`/blog/${post.slug}/`}>
+                  <span class="title">{post.data.title}</span>
+                  <span class="date">
+                      <FormattedDate date={post.data.pubDate} />
+                  </span>
+              </a>
+          </li>)}
+        </ul>
+    </div>
+
+
+</Layout>

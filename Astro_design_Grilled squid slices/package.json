@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^5.1.1",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "astro": "^4.11.5",
+    "katex": "^0.16.11",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
+  }
+}

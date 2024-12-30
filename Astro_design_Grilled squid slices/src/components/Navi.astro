@@ -1,0 +1,228 @@
+---
+const { pageTitle } = Astro.props
+import Footer from '../components/Footer.astro';
+---
+<div id="left" class="lr" transition:name="left">
+    <a id="sitename" href="/" class="text">竹醉阁</a>
+    <span id="title" class="text">您正在浏览：「{ pageTitle }」</span>
+
+    <Footer />
+</div>
+<div id="right" class="lr" transition:name="right">
+    <div id="links">
+        <a href="/" class="links" id="main">首页</a>
+        <a href="/archive" class="links" id="archive">归档</a>
+        <a href="/tags" class="links" id="tags">标签</a>
+        <a href="/about" class="links" id="about">关于</a>
+    </div>
+
+</div>
+
+<style>
+
+
+.zcool-qingke-huangyou-regular {
+
+}
+
+
+    #sitename{
+        font-size: 40px;
+        font-family: "ZCOOL QingKe HuangYou", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        width: 15vw;
+        letter-spacing: 10px;
+        text-align:center;
+        line-height:50px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        white-space:nowrap
+
+    }
+    #title{
+        text-align: center;
+        width: 11vw;
+        position: relative;
+        left: 2vw;
+        
+    }
+    #links{
+        display: grid;
+        height: 100vh;
+    }
+    .links{
+        font-size: 100px;
+        font-family: "ZCOOL QingKe HuangYou", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        padding: 20px 0 20px 0;
+        white-space:nowrap;
+
+    }
+
+
+    .lr{
+        width: 15vw;
+        top: 0;
+        height: 100vh;
+        position: fixed;
+        background-color: #FCFAF2;
+        display: flex;            
+        display: -webkit-flex;            
+        flex-direction: column; 
+
+    }
+    .links{
+        opacity: 0.3;
+        transition: .3s;
+        text-shadow: 0em 0em 0em #0F4C3A;
+
+    }
+    .links:hover{
+        opacity: 1;
+        text-shadow: 0.1em 0.1em 0.5em #0F4C3A;
+
+    }
+    #left{
+        left: -15vw;
+        animation: left 2s forwards;
+    }
+    #right{
+        right: -15vw;
+        animation: right 2s forwards;
+        z-index: 999;
+    }
+
+
+    @keyframes left{
+        0%{
+            transform: translateX(0);
+        }
+        80%{
+            transform: translateX(0);
+        }
+        95%{
+            transform: translateX(14.5vw);
+            
+        }
+        100%{
+            transform: translateX(15vw);
+
+        }
+    }
+    @keyframes right{
+        0%{
+            transform: translateX(0);
+        }
+        80%{
+            transform: translateX(0);
+        }
+        95%{
+            transform: translateX(-14.5vw);
+            
+        }
+        100%{
+            transform: translateX(-15vw);
+
+        }
+    }
+
+
+
+
+    @media (max-width: 760px) {
+
+        .lr{
+            width: 100vw;
+            height: 10vh;
+            position: fixed;
+            display: flex;            
+            display: -webkit-flex;            
+            flex-direction: row; 
+            left:0;
+
+        }
+        #sitename{
+            font-size: 60px;
+            font-family: "ZCOOL QingKe HuangYou", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            width: 100vw;
+            letter-spacing: 10px;
+            text-align:center;
+            line-height:50px;
+            padding-top: 20px;
+            padding-bottom: 40px;
+            white-space:nowrap
+
+        }
+        #title{
+            display:none;
+        }
+
+        
+        #left{
+            top: -10vh;
+            left: 0;
+            animation: top 2s forwards;
+            z-index: 999;
+        }
+        #right{
+            top: 100vh;
+            right:0;
+            animation: bar 2s forwards;
+            z-index: 999;
+
+        }
+
+        #links{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+
+        }
+        .links{
+            font-size: 60px;
+            font-family: "ZCOOL QingKe HuangYou", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            white-space:nowrap;
+            flex: 1;
+
+        }
+        @keyframes bar{
+            0%{
+                transform: translateY(0);
+            }
+            80%{
+                transform: translateY(0);
+            }
+            95%{
+                transform: translateY(-9.5vh);
+                
+            }
+            100%{
+                transform: translateY(-10vh);
+            }
+        }
+        @keyframes top{
+            0%{
+                transform: translateY(0);
+            }
+            80%{
+                transform: translateY(0);
+            }
+            95%{
+                transform: translateY(9.5vh);
+                
+            }
+            100%{
+                transform: translateY(10vh);
+
+            }
+        }
+    }  
+</style>

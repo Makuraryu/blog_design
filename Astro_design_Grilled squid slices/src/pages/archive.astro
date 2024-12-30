@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf() 
+);
+
+const postsByYear = posts.reduce((acc, post) => {
+  const year = new Date(post.data.pubDate).getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const sortedYears = Object.keys(postsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+const title = '归档';
+---
+
+<Layout pageTitle= {title}>
+
+	<section id="guider">
+		<p>这是关于文章的档案馆</p>
+		<ul>
+			{sortedYears.map(year => (
+			<li>
+				<h2>{year}</h2>
+				<ul>
+				{postsByYear[year].map(post => (
+					<li class="posts">
+						<a href={`/blog/${post.slug}/`}>
+							<span class="title">{post.data.title}</span>
+							<span class="date">
+								<FormattedDate date={post.data.pubDate} />
+							</span>
+						</a>
+					</li>
+				))}
+				</ul>
+			</li>
+			))}
+		</ul>
+	</section>
+
+</Layout>

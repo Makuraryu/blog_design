@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Hexo public & cache
+public/
+.deploy*/
+db.json
+.cache/
+
+# Generated files
+*.log
+
+# Environment files
+.env
+.env.*
+
+# OS / Editor
+.DS_Store
+.vscode/

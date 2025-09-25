@@ -12,7 +12,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())].slice(0
 <Layout pageTitle= {title}>
 <div id="guider">
 	<p>欢迎来到竹醉阁。</p>
-	<p>这里有我写的一些<a href="/archive">文章</a>：</p>
+    <p>这里有我写的一些<a href="archive">文章</a>：</p>
 	<ul>
 		{posts.map(post => (
 			<li>
@@ -27,7 +27,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())].slice(0
 			
 		))}
 	</ul>
-	<p>你也可以选找你喜欢的<a href="/tags">主题</a>来阅读：</p>
+    <p>你也可以选找你喜欢的<a href="tags">主题</a>来阅读：</p>
 	<ul>
 		{tags.map((tag) => (
 		  <li><a href={`/tags/${tag}`}>{tag}</a></li>

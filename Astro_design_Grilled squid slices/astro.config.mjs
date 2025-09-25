@@ -12,10 +12,11 @@ import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://takeyoi.zeabur.app',
-	integrations: [mdx(), sitemap()],
-	markdown: {
-		remarkPlugins: [remarkMath],
-		rehypePlugins: [rehypeKatex]
-	}
+  site: 'https://makuraryu.github.io/GrilledSquidSlices/',
+  base: '/GrilledSquidSlices/',
+  integrations: [mdx(), sitemap()],
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex]
+  }
 });

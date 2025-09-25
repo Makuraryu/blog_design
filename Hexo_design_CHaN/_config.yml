@@ -1,3 +1,14 @@
+title: CHaN Demo
+subtitle: ''
+description: 'Hexo CHaN theme demo build'
+author: Makuraryu
+language: zh-CN
+timezone: Asia/Shanghai
+url: https://makuraryu.github.io
+root: /Hexo_CHaN/
+permalink: :year/:month/:day/:title/
+theme: CHaN
+
 menu:
   友链: /links
   关于: /about
@@ -25,6 +36,5 @@ linker:
     avater: https://cdn.retiehe.com/cached-edfcf8a8b627b6c6d3c07879532d97ea/mr-starter/icon.png
     description: 一个自制的小巧起始页
   
-
 
 
